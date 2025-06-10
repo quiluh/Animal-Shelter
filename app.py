@@ -10,4 +10,24 @@ def create_connection():
         db="animal-shelter"
     )
 
+@app.route("/")
+def Home():
+    pass
+
+@app.route("/view")
+def View():
+    pass
+
+@app.route("/add")
+def Add():
+    pass
+
+@app.route("/delete")
+def Delete():
+    pass
+
+@app.route("/edit")
+def Edit():
+    pass
+
 app.run(debug=True)
