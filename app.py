@@ -19,20 +19,4 @@ def Home():
             result = cursor.fetchall()
     return render_template("index.html",allDogs=result)
 
-@app.route("/view")
-def View():
-    pass
-
-@app.route("/add")
-def Add():
-    pass
-
-@app.route("/delete")
-def Delete():
-    pass
-
-@app.route("/edit")
-def Edit():
-    pass
-
 app.run(debug=True)
