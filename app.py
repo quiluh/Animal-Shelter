@@ -13,7 +13,11 @@ def create_connection():
 
 @app.route("/")
 def Home():
-    pass
+    with create_connection() as connection:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * from dogs")
+            result = cursor.fetchall()
+    return render_template("index.html",allDogs=result)
 
 @app.route("/view")
 def View():
