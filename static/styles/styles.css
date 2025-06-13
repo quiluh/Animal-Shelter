@@ -4,3 +4,9 @@
     justify-content: space-evenly;
     align-content: center;
 }
+.navItem {
+    text-decoration: none;
+    background-color: lightsalmon;
+    padding: 1.5%;
+    border-radius: 0.25rem;
+}
