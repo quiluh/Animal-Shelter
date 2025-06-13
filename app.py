@@ -7,7 +7,8 @@ def create_connection():
         host="10.0.0.17:3306",
         user="clymesa",
         password="ANGLE",
-        db="animal-shelter"
+        db="animal-shelter",
+        cursorclass=pymysql.cursors.DictCursor
     )
 
 @app.route("/")
