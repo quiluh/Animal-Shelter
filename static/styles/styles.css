@@ -10,6 +10,18 @@
     padding: 1.5%;
     border-radius: 0.25rem;
 }
+.card {
+    width: 100%;
+    padding: 5%;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    user-select: none;
+}
 .card img {
-    
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 0.25rem;
+    user-select: none;
+    -webkit-user-drag: none;
 }
