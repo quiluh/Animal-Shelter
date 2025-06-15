@@ -12,11 +12,11 @@ body {
     background-color: var(--backroundSecondary);
     padding: 1.5%;
     border-radius: 0.25rem;
+    text-align: center;
 }
 .col {
     display: flex;
     flex-direction: column;
-    width: calc(33% - 40px);
 }
 .row {
     display: flex;
@@ -25,6 +25,9 @@ body {
 }
 .spaceEvenly {
     justify-content: space-evenly;
+}
+.cardCol {
+    width: calc(33% - 40px);
 }
 .card {
     width: 100%;
