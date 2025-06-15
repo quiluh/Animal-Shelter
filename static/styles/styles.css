@@ -5,10 +5,7 @@ body {
     margin: 0;
 }
 .navbar {
-    display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
-    align-content: center;
 }
 .navItem {
     text-decoration: none;
@@ -31,7 +28,6 @@ body {
 }
 .card {
     width: 100%;
-    padding: 5%;
     border-radius: 0.25rem;
     cursor: pointer;
     user-select: none;
