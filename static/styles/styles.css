@@ -1,3 +1,6 @@
+:root {
+    --backroundSecondary: rgb(181, 255, 187);
+}
 .navbar {
     display: flex;
     flex-direction: row;
@@ -6,7 +9,7 @@
 }
 .navItem {
     text-decoration: none;
-    background-color: lightsalmon;
+    background-color: var(--backroundSecondary);
     padding: 1.5%;
     border-radius: 0.25rem;
 }
@@ -30,6 +33,7 @@
     cursor: pointer;
     user-select: none;
     text-align: center;
+    background-color: var(--backroundSecondary);
 }
 .card img {
     object-fit: cover;
