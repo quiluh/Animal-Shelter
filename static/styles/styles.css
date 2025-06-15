@@ -10,6 +10,16 @@
     padding: 1.5%;
     border-radius: 0.25rem;
 }
+.col {
+    display: flex;
+    flex-direction: column;
+    width: calc(33% - 40px);
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
 .card {
     width: 100%;
     padding: 5%;
