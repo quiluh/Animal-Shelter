@@ -1,6 +1,9 @@
 :root {
     --backroundSecondary: rgb(181, 255, 187);
 }
+body {
+    margin: 0;
+}
 .navbar {
     display: flex;
     flex-direction: row;
