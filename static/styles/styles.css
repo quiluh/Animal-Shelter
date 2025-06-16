@@ -6,6 +6,7 @@ body {
 }
 .navbar {
     justify-content: space-evenly;
+    padding: 2%;
 }
 .navItem {
     background-color: var(--backroundSecondary);
