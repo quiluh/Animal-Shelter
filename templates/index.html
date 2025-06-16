@@ -12,13 +12,17 @@
             <a href="/" class="textDecorationNone">Home</a>
         </div>
     </nav>
-    <div class="row spaceEvenly">
-        <div class="col cardCol">
-            <div class="card">
-                <img src="../static/images/test.jpg" alt="">
-                <h2>Name</h2>
-            </div>
+    {% for row in randomDogs %}
+        <div class="row spaceEvenly">
+            {% for dog in row %}
+                <div class="col cardCol">
+                    <div class="card">
+                        <img src="../static/images/test.jpg" alt="">
+                        <h2>{{ dog["Name"] }}</h2>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    </div>
+    {% endfor %}
 </body>
 </html>
