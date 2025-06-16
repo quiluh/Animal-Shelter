@@ -33,6 +33,6 @@ def Home():
         for index in range(len(i)):
             i[index] = result[next(randomIndexes)]
 
-    return render_template("index.html",allDogs=randomDogs)
+    return render_template("index.html",randomDogs=randomDogs)
 
 app.run(debug=True)
