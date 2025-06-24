@@ -35,4 +35,15 @@ def Home():
 
     return render_template("index.html",randomDogs=randomDogs)
 
+@app.route("/viewDog")
+def ViewDog():
+    id = request.args["id"]
+    with create_connection() as connection:
+        with connection.cursor() as cursor:
+            sql = "SELECT * FROM dogs WHERE id = %s"
+            values = (id)
+            cursor.execute(sql, values)
+            result = cursor.fetchone()
+    return render_template("viewDog.html",dog=result)
+
 app.run(debug=True)
