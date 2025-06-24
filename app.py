@@ -6,10 +6,10 @@ app = Flask(__name__)
 
 def create_connection():
     return pymysql.connect(
-        host="10.0.0.17:3306",
+        host="10.0.0.17",
         user="clymesa",
         password="ANGLE",
-        db="animal-shelter",
+        db="clymesa_animal-shelter",
         cursorclass=pymysql.cursors.DictCursor
     )
 
