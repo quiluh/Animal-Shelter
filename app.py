@@ -46,4 +46,19 @@ def ViewDog():
             result = cursor.fetchone()
     return render_template("viewDog.html",dog=result)
 
+@app.route("/addDog",methods=["GET","POST"])
+def AddDog():
+    if request.method == "GET":
+        return render_template("addDog.html")
+    elif request.method == "POST":
+        name = request.form["name"]
+        info = request.form["info"]
+        with create_connection() as connection:
+            with connection.cursor() as cursor:
+                sql = """INSERT INTO dogs (name,info) VALUES (%s,%s)"""
+                values = (name,info)
+                cursor.execute(sql,values)
+                connection.commit()
+        return render_template("index.html")
+
 app.run(debug=True)
