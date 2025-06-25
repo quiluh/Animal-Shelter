@@ -49,6 +49,10 @@ def ViewDog():
             result = cursor.fetchone()
     return render_template("viewDog.html",dog=result)
 
+def saveFile(file):
+    file.save(f"static/uploads/{file.name}")
+    return f"/static/uploads/{file.name}"
+
 @app.route("/addDog",methods=["GET","POST"])
 def AddDog():
     if request.method == "GET":
