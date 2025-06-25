@@ -2,6 +2,7 @@ import pymysql
 from flask import Flask, render_template, request, redirect
 import random
 import os
+import uuid
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -50,8 +51,12 @@ def ViewDog():
     return render_template("viewDog.html",dog=result)
 
 def saveFile(file):
-    file.save(f"static/uploads/{file.name}")
-    return f"/static/uploads/{file.name}"
+    if not file:
+        return "/static/images/test.jpg"
+    randomness = str(uuid.uuid4())[:8]
+    filepath = "static/uploads/" + randomness + '-' +  file.filename
+    file.save(filepath)
+    return "/" + filepath
 
 @app.route("/addDog",methods=["GET","POST"])
 def AddDog():
