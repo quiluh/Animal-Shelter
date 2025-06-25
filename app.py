@@ -68,6 +68,17 @@ def AddDog():
                 values = (name,info,filePath)
                 cursor.execute(sql,values)
                 connection.commit()
-        return render_template("index.html")
+        return redirect("/")
+    
+@app.route("/deleteDog")
+def DeleteDog():
+    id = request.args["id"]
+    with create_connection() as connection:
+        with connection.cursor() as cursor:
+            sql = """DELETE FROM dogs WHERE id=%s"""
+            values = (id)
+            cursor.execute(sql,values)
+            connection.commit()
+    return redirect("/")
 
 app.run(debug=True)
