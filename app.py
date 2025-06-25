@@ -1,6 +1,9 @@
 import pymysql
 from flask import Flask, render_template, request, redirect
 import random
+import os
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 app = Flask(__name__)
 
