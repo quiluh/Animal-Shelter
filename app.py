@@ -81,4 +81,27 @@ def DeleteDog():
             connection.commit()
     return redirect("/")
 
+@app.route("/editDogs",methods=["GET","POST"])
+def EditDogs():
+    if request.method == "GET":
+        id = request.args["id"]
+        with create_connection() as connection:
+            with connection.cursor() as cursor:
+                sql = "SELECT * FROM dogs WHERE id = %s"
+                values = (id)
+                cursor.execute(sql, values)
+                result = cursor.fetchone()
+        return render_template("editDogs.html", dogData=result)
+    elif request.method == "POST":
+        id = request.form["id"]
+        name = request.form["name"]
+        info = request.form["info"]
+        with create_connection() as connection:
+            with connection.cursor() as cursor:
+                sql = "UPDATE dogs SET name = %s, info = %s WHERE id = %s"
+                values = (name, info, id)
+                cursor.execute(sql, values)
+                connection.commit()
+        return redirect("/")
+
 app.run(debug=True)
