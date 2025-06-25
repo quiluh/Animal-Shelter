@@ -86,8 +86,8 @@ def DeleteDog():
             connection.commit()
     return redirect("/")
 
-@app.route("/editDogs",methods=["GET","POST"])
-def EditDogs():
+@app.route("/editDog",methods=["GET","POST"])
+def EditDog():
     if request.method == "GET":
         id = request.args["id"]
         with create_connection() as connection:
