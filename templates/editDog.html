@@ -6,6 +6,19 @@
     <title>Edit Dog</title>
 </head>
 <body>
-    
+    <form method="POST">
+
+        <input name="id" type="hidden" value="{{ dogData['id'] }}">
+
+        <label for="name">Name:</label>
+        <input id="name" name="name" value="{{ dogData['name'] }}">
+        <br>
+
+        <label for="info">Info:</label>
+        <textarea name="info" id="info" value="{{ dogData['info'] }}"></textarea>
+        <br>
+
+        <button>Update</button>
+    </form>
 </body>
 </html>
