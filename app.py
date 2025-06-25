@@ -60,10 +60,12 @@ def AddDog():
     elif request.method == "POST":
         name = request.form["name"]
         info = request.form["info"]
+        file = request.files["image"]
+        filePath = saveFile(file)
         with create_connection() as connection:
             with connection.cursor() as cursor:
-                sql = """INSERT INTO dogs (name,info) VALUES (%s,%s)"""
-                values = (name,info)
+                sql = """INSERT INTO dogs (name,info,image) VALUES (%s,%s,%s)"""
+                values = (name,info,filePath)
                 cursor.execute(sql,values)
                 connection.commit()
         return render_template("index.html")
